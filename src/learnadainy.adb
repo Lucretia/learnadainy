@@ -67,6 +67,20 @@ procedure LearnAdaInY is
    --  Ada 2022 includes the use of [] for array initialisation when using
    --  the containers, which were added in Ada 2012.
 
+   --  Arrays are usually always defined as a type.
+   --  They can be any dimension.
+   type My_Array_1 is array (1 .. 4, 3 .. 7, -20 .. 20) of Integer;
+
+   --  Yes, unlike other languages, you can index arrays with other discrete
+   --  types / ranges.
+
+   type Axes is (X, Y, Z);
+
+   --  You can define the array's range using the 'Range attribute.
+   type Vector is array (Axes'Range) of Float;
+
+   V1 : constant Vector := (0.0, 0.0, 1.0);
+
    --  We can rename objects (aliases) to make readability a bit better.
    package IO renames Ada.Text_IO;
 begin
