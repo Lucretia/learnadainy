@@ -93,6 +93,10 @@ procedure LearnAdaInY is
    --  There are [dynamic length strings](https://ada-lang.io/docs/arm/AA-A/AA-A.4#Subclause_A.4.5) available.
    E1 : constant Entities := ("Blob      ", (0.0, 0.0, 0.0));
 
+   --  We can make an object be initialised to it's default values with the box
+   --  notation, <>.
+   Null_Entity : constant Entities := (others => <>);
+
    --  Object-orientation is accomplished via an extension of record syntax,
    --  tagged records, see link above.
 
