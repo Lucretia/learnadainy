@@ -62,7 +62,7 @@ procedure LearnAdaInY is
    --  Ada was created and because an array can be seen as a function from a
    --  mathematical perspective, so it made converting between arrays and
    --  functions easier.
-   Char : constant character := Str (Str'First);
+   Char : constant Character := Str (Str'First);
 
    --  Ada 2022 includes the use of [] for array initialisation when using
    --  the containers, which were added in Ada 2012.
@@ -141,5 +141,16 @@ begin
       end loop;
 
       IO.New_Line;
+   end;
+
+   --  All objects know their bounds, including strings.
+   declare
+      C : Character := Str (50);  --  Warning caused and exception raised at
+                                  --  runtime.
+   begin
+      null;
+   exception
+      when Constraint_Error =>
+         IO.Put_Line ("Caught the exception");
    end;
 end LearnAdaInY;
