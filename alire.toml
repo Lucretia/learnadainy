@@ -9,4 +9,4 @@ licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
 website = "https://learnxinyminutes.com/docs/ada"
 tags = ["education"]
 
-executables = ["learnadainy"]
+executables = ["empty", "hello", "learnadainy"]
