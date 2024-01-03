@@ -75,13 +75,23 @@ procedure LearnAdaInY is
 
    --  Yes, unlike other languages, you can index arrays with other discrete
    --  types / ranges.
-
    type Axes is (X, Y, Z);
 
    --  You can define the array's range using the 'Range attribute.
    type Vector is array (Axes'Range) of Float;
 
    V1 : constant Vector := (0.0, 0.0, 1.0);
+
+   --  A record is the same as a structure in C, C++.
+   type Entities is record
+      Name     : String (1 .. 10);  --  Always start at 1, inclusive range.
+      Position : Vector;
+   end record;
+
+   --  In Ada, you have to pad out the full string. Change the number of spaces
+   --  to less than 6 to see it raise an exception.
+   --  There are [dynamic length strings](https://ada-lang.io/docs/arm/AA-A/AA-A.4#Subclause_A.4.5) available.
+   E1 : constant Entities := ("Blob      ", (0.0, 0.0, 0.0));
 
    --  We can rename objects (aliases) to make readability a bit better.
    package IO renames Ada.Text_IO;
