@@ -2,5 +2,5 @@
 
 procedure Empty is
 begin
-   null;
+   null;  -- Do nothing here.
 end Empty;
