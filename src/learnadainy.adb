@@ -148,9 +148,9 @@ begin
       C : Character := Str (50);  --  Warning caused and exception raised at
                                   --  runtime.
    begin
-      null;
-   exception
-      when Constraint_Error =>
-         IO.Put_Line ("Caught the exception");
+      null;  --  We will never get to this point because of the above.
    end;
+exception
+   when Constraint_Error =>
+      IO.Put_Line ("Caught the exception");
 end LearnAdaInY;
