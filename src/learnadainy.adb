@@ -55,6 +55,8 @@ procedure LearnAdaInY is
 
    --  You can have normal Latin 1 based strings by default.
    Str  : constant String    := "This is a constant string";
+   --  When initialising from a string literal, the compiler knows the bounds,
+   --  so we don't have to define them.
 
    --  Strings are arrays. Note how parentheses are used to access elements of
    --  an array? This is a mathematical notation. It was used because at the
