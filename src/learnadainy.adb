@@ -51,6 +51,8 @@ procedure LearnAdaInY is
    --  Ada has a style guide and GNAT will force you to adhere to it, so that
    --  all Ada source looks consistent.
 
+   --  TODO: Add fixed and floating point types.
+
    --  We can rename objects (aliases) to make readability a bit better.
    package IO renames Ada.Text_IO;
 begin
