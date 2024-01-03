@@ -1,5 +1,8 @@
 --  Ada compiler's accept compilation units which can be library packages,
 --  tasks, sub-programs, generics, etc.
+
+--  This is where "context clauses" go, these can be pragmas or ```with```
+--  statements.
 with Ada.Text_IO;  --  Get access to a library package.
 
 procedure Hello is
