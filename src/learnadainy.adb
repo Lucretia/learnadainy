@@ -147,6 +147,8 @@ begin
    declare
       C : Character := Str (50);  --  Warning caused and exception raised at
                                   --  runtime.
+      --  The exception raised above can only be handled by an outer scope,
+      --  see [wikipbook](https://en.wikibooks.org/wiki/Ada_Programming/Exceptions#Exception_handlers).
    begin
       null;  --  We will never get to this point because of the above.
    end;
