@@ -135,10 +135,20 @@ begin
    --  Loops have a consistent form.
    --  <form> can be while or for or missing as below.
    --
-   --  Infinite - Uncomment to see it loop forever.
-   --  loop
-   --     null;
-   --  end loop;  -- Useful to state machines.
+   declare
+      Counter : Positive := Positive'First;  --  This is 1.
+   begin
+      --  We can label loops so we can exit from them more easily if we need to.
+      Infinite : loop
+         IO.Put_Line ("[Infinite loop] Counter = " & Counter'Image);
+
+         Counter := Counter + 1;
+
+         --  This next line implements a repeat ... until or do ... while loop construct.
+         --  Comment it out for an infinite loop.
+         exit Infinite when Counter = 5;
+      end loop Infinite;  -- Useful to state machines.
+   end;
 
    declare  --  We don't have to have a label.
       Counter : Positive := Positive'First;  --  This is 1.
