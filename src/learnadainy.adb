@@ -1,4 +1,8 @@
+with Ada.Unchecked_Conversion;
+
 procedure LearnAdaInY is
+   -- Indentation is 3 spaces.
+
    --  The most important feature in Ada is the type, objects have types and an
    --  object of one type cannot be assigned to an object of another type.
 
@@ -25,6 +29,14 @@ procedure LearnAdaInY is
    Yellow_Hue : constant Hues      := Yellow;
    Colour_1   : constant Hues      := Red_Hue;
    --  Colour_2   : constant Primaries := Yellow_Hue;   --  Comment to compile.
+
+   --  You can force conversions, but the you are warned by the name of the
+   --  package that you are doing something unsafe.
+   function Degrees_To_Int is new Ada.Unchecked_Conversion
+     (Source => Degrees,   --  Line continuations are indented by 2 spaces.
+      Target => Integer);
+
+   New_Value_2 : Integer := Degrees_To_Int (Angle);   --  Note, space before (.
 begin
    null;
 end LearnAdaInY;
