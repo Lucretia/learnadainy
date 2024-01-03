@@ -12,6 +12,15 @@ package body Stuff is
    begin
       I := Times_4 (I);
    end Do_Something;
+
+
+   --  Generic procedure body.
+   procedure Swap (Left, Right : in out Element) is
+      Temp : Element := Left;
+   begin
+      Left  := Right;
+      Right := Temp;
+   end Swap;
 begin
    --  If we need to initialise something within the package, we can do it
    --  here.

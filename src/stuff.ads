@@ -14,6 +14,11 @@ package Stuff is
    procedure Do_Something;  --  If a subprogram takes no parameters, it is not
                             --  shown.
 
+   --  We can also make generic sub-programs.
+   generic
+      type Element is (<>);
+   procedure Swap (Left, Right : in out Element);
+
    --  Sometimes we want to hide how a type is defined from the outside world
    --  so that nobody can mess with it directly. The full type must be defined
    --  within the private section below.
