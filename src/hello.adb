@@ -1,4 +1,6 @@
-with Ada.Text_IO;
+--  Ada compiler's accept compilation units which can be library packages,
+--  tasks, sub-programs, generics, etc.
+with Ada.Text_IO;  --  Get access to a library package.
 
 procedure Hello is
 begin
