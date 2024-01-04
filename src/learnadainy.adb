@@ -52,7 +52,13 @@ procedure LearnAdaInY is
    --  Ada has a style guide and GNAT will force you to adhere to it, so that
    --  all Ada source looks consistent.
 
-   --  TODO: Add fixed and floating point types.
+   --  Yes, you can even define your own floating and fixed point types, this
+   --  is a very rare and unique ability.
+   type Real_Angles is digits 3 range 0.0 .. 360.0;
+   type Fixed_Angles is delta 0.01 digits 5 range 0.0 .. 360.0;
+
+   RA : constant Real_Angles  := 36.45;
+   FA : constant Fixed_Angles := 360.0;
 
    --  You can have normal Latin 1 based strings by default.
    Str  : constant String    := "This is a constant string";
