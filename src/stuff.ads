@@ -1,6 +1,10 @@
---  Ada has a real module system, they are called packages and are split into
+--  Ada has a real module system. Modules are called packages and are split into
 --  two component parts, the specification (this file) and a body, the other.
+--  It is important to introduce packages early, as you will be using them from
+--  the start.
 package Stuff is
+   --  We could add the following line in order to tell the compiler that this
+   --  package does not have to run any code before the "main" procedure starts.
    --  pragma Preelaborate;
 
    --  Packages can be nested within the same file or externally.
@@ -10,7 +14,7 @@ package Stuff is
    end Things;
 
    --  If there are sub-programs declared within the specification, the body
-   --  of the sub-program must be declared within the package bod.
+   --  of the sub-program must be declared within the package body.
    procedure Do_Something;  --  If a subprogram takes no parameters, it is not
                             --  shown.
 

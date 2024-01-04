@@ -3,6 +3,7 @@ package body Stuff is
    procedure Do_Something is
       --  We can nest sub-programs too.
       --  Parameters are defined with the direction of travel, in, in out, out.
+      --  If the direction of travel is not specified, they are in by default.
       function Times_4 (Value : in Integer) return Integer is
       begin
          return Value * 4;
