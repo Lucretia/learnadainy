@@ -179,7 +179,8 @@ begin
 
          --  Types and objects know about their bounds, their First .. Last
          --  values. These can be specified as range types.
-         if Hue /= Hues'Last then
+         if Hue /= Hues'Last then  --  The /= means "not equal to" like the
+                                   --  maths symbol ≠.
             Put (", ");
          end if;
       end loop;
