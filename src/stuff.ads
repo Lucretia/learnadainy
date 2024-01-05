@@ -1,3 +1,5 @@
+
+
 --  Ada has a real module system. Modules are called packages and are split into
 --  two component parts, the specification (this file) and a body, the other.
 --  It is important to introduce packages early, as you will be using them from

@@ -1,3 +1,5 @@
+
+
 with Ada.Unchecked_Conversion;
 with Ada.Text_IO;
 with Stuff;
@@ -12,7 +14,7 @@ procedure LearnAdaInY is
    --  modelling. But you can use the standard types to start with and then
    --  replace them later with your own types, this could be called a form of
    --  gradual typing.
-   --
+
    --  The standard types would only really be a good starting point for binding
    --  to other languages, like C. Ada is the only language with a standardised
    --  way to bind with [C](https://ada-lang.io/docs/arm/AA-B/AA-B.3),
@@ -157,7 +159,6 @@ begin
 
    --  Loops have a consistent form.
    --  <form> can be while or for or missing as below.
-   --
    declare
       Counter : Positive := Positive'First;  --  This is 1.
    begin

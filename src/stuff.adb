@@ -1,3 +1,5 @@
+
+
 package body Stuff is
    --  Sub-program body.
    procedure Do_Something is
