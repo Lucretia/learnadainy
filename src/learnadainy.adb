@@ -70,7 +70,7 @@ procedure LearnAdaInY is
 
    --  Yes, you can even define your own floating and fixed point types, this
    --  is a very rare and unique ability. ```digits``` refers to the minimum
-   --  digit precission that the type should support. ```delta``` is for fixed
+   --  digit precision that the type should support. ```delta``` is for fixed
    --  point types and refers to the smallest change that the type will support.
    type Real_Angles is digits 3 range 0.0 .. 360.0;
    type Fixed_Angles is delta 0.01 digits 5 range 0.0 .. 360.0;
@@ -84,9 +84,9 @@ procedure LearnAdaInY is
    --  so we don't have to define them.
 
    --  Strings are arrays. Note how parentheses are used to access elements of
-   --  an array? This is a mathematical notation. It was used because at the
-   --  time square brackets were not available on all keyboards at the time
-   --  Ada was created and because an array can be seen as a function from a
+   --  an array? This is mathematical notation and was used because square
+   --  brackets were not available on all keyboards at the time Ada was
+   --  created. Also, because an array can be seen as a function from a
    --  mathematical perspective, so it made converting between arrays and
    --  functions easier.
    Char : constant Character := Str (Str'First);  --  ```'First``` is a type
@@ -129,7 +129,7 @@ procedure LearnAdaInY is
 
    -- There are [dynamic length strings](https://ada-lang.io/docs/arm/AA-A/AA-A.4#Subclause_A.4.5) available in the standard library.
 
-   --  We can make an object be initialised to it's default values with the box
+   --  We can make an object be initialised to its default values with the box
    --  notation, <>. ```others``` is used to indicate anything else that has not
    --  been explicitly initialized.
    Null_Entity : constant Entities := (others => <>);
@@ -168,13 +168,17 @@ begin
       IO.New_Line;
    end Enum_IO;
 
-   --  Loops have a consistent form.
-   --  <form> can be while or for or missing as below.
+   --  Loops have a consistent form. ```<form> loop ... end loop``.
+   --  Where "form" can be ```while``` or ```for``` or missing as below, if
+   --  you place the ```loop ... end loop;``` construct on their own lines,
+   --  you can comment out or experiment with different loop constructs more
+   --  easily.
    declare
       Counter : Positive := Positive'First;  --  This is 1.
    begin
       --  We can label loops so we can exit from them more easily if we need to.
-      Infinite : loop
+      Infinite :
+      loop
          IO.Put_Line ("[Infinite loop] Counter = " & Counter'Image);
 
          Counter := Counter + 1;
@@ -188,7 +192,8 @@ begin
    declare  --  We don't have to have a label.
       Counter : Positive := Positive'First;  --  This is 1.
    begin
-      while Counter < 10 loop
+      while Counter < 10
+      loop
          IO.Put_Line ("Counter = " & Counter'Image);
 
          Counter := Counter + 1;  --  There is no explicit inc/decrement.
@@ -209,7 +214,8 @@ begin
 
       --  Because we are using the 'Range attribute, the compiler knows it is
       --  safe and can omit run-time checks here.
-      for Hue in Hues'Range loop
+      for Hue in Hues'Range
+      loop
          Put (Hue);
 
          --  Types and objects know about their bounds, their First .. Last
@@ -228,7 +234,7 @@ begin
       C : Character := Str (50);  --  Warning caused and exception raised at
                                   --  runtime.
       --  The exception raised above can only be handled by an outer scope,
-      --  see [wikipbook](https://en.wikibooks.org/wiki/Ada_Programming/Exceptions#Exception_handlers).
+      --  see [wikibook](https://en.wikibooks.org/wiki/Ada_Programming/Exceptions#Exception_handlers).
    begin
       null;  --  We will never get to this point because of the above.
    end;

@@ -17,8 +17,9 @@ package Stuff is
 
    --  If there are sub-programs declared within the specification, the body
    --  of the sub-program must be declared within the package body.
-   procedure Do_Something;  --  If a subprogram takes no parameters, it is not
-                            --  shown.
+   procedure Do_Something;  --  If a subprogram takes no parameters, empty
+                            --  parentheses are not required, unlike other
+                            --  languages.
 
    --  We can also make generic sub-programs.
    generic
