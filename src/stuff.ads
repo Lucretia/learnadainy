@@ -1,7 +1,7 @@
 
 
 --  Ada has a real module system. Modules are called packages and are split into
---  two component parts, the specification (this file) and a body, the other.
+--  two component parts, the specification and a body.
 --  It is important to introduce packages early, as you will be using them from
 --  the start.
 package Stuff is
@@ -23,7 +23,8 @@ package Stuff is
 
    --  We can also make generic sub-programs.
    generic
-      type Element is (<>);
+      type Element is (<>);  --  The "(<>)" notation specifies that only
+                             --  discrete types can be passed into the generic.
    procedure Swap (Left, Right : in out Element);
 
    --  Sometimes we want to hide how a type is defined from the outside world

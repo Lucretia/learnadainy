@@ -2,8 +2,8 @@
 --  Ada compilers accept compilation units which can be library packages,
 --  tasks, sub-programs, generics, etc.
 
---  This is where "context clauses" go, these can be pragmas or ```with```
---  statements. ```with``` is equivalent to "include" or "import" in other
+--  This is where "context clauses" go, these can be pragmas or "with"
+--  statements. "with" is equivalent to "include" or "import" in other
 --  languages.
 with Ada.Text_IO;  --  Get access to a library package.
 
